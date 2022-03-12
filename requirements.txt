@@ -4,6 +4,7 @@ billiard==3.6.4.0
 black==22.1.0
 celery==4.4.7
 click==8.0.4
+coverage==6.3.2
 Deprecated==1.2.13
 distlib==0.3.4
 Django==4.0.1
