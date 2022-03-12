@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="flex justify-evenly">
+
+  <div class="flex flex-col h-screen space-y-10 justify-center w-1/3.8">
+
+    <h1 class="text-5xl font-bold pb-8">Todo Manager</h1>
+    <h2 class="text-3xl mb-4">Signup</h2>
+
+    <form action="" method="post">
+      <div class="flex flex-col space-y-4">
+
+        <div>
+          <label for="id_username">Username</label>
+          <input
+            type="text"
+            name="username"
+            maxlength="150"
+            autocapitalize="none"
+            autocomplete="username"
+            autofocus
+            required
+            id="id_username"
+            class="appearance-none rounded-md w-full py-2 px-3 leading-tight bg-[#F1F5F9] my-2"
+          />
+          <p class="text-xs text-[#64748B]">
+            150 characters or fewer. Letters, digits and @/./+/-/_ only.
+          </p>
+        </div>
+
+        <div>
+          <label for="id_password1">Password</label>
+          <input
+            type="password"
+            name="password1"
+            autocomplete="new-password"
+            required
+            id="id_password1"
+            class="appearance-none rounded-md w-full py-2 px-3 leading-tight bg-[#F1F5F9] my-2"
+          />
+
+          <span class="text-xs text-[#64748B] w-full">
+            <ul class="list-disc ml-8">
+              <li>
+                Your password can't be too similar to your other personal
+                information.
+              </li>
+              <li>Your password must contain at least 8 characters.</li>
+              <li>Your password can't be a commonly used password.</li>
+              <li>Your password can't be entirely numeric.</li>
+            </ul>
+          </span>
+        </div>
+
+        <div>
+          <label for="id_password2">Confirm Password</label>
+          <input
+            type="password"
+            name="password2"
+            autocomplete="new-password"
+            required
+            id="id_password2"
+            class="appearance-none rounded-md w-full py-2 px-3 leading-tight bg-[#F1F5F9] my-2"
+          />
+          {% csrf_token %}
+          <input
+            type="submit"
+            value="Sign Up"
+            class="rounded-md bg-blue-500 py-2 px-4 text-white w-full bg-[#EF4444] my-10"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{%endblock%}
